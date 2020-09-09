@@ -1,11 +1,13 @@
 {
   "name": "electron-updater-example",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Muhammad Ardie",
   "scripts": {
-    "publish": "build -p always"
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "build": {
     "appId": "com.github.muhammadardie.electronupdaterexample",
