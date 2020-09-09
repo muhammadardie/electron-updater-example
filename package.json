@@ -9,9 +9,14 @@
   },
   "build": {
     "appId": "com.github.muhammadardie.electronupdaterexample",
+    "publish": [{
+         "provider": "github",
+         "owner": "muhammadardie",
+         "repo": "electron-updater-example"
+     }],
     "win": {
       "target": "nsis"
-    },
+    }
   },
   "devDependencies": {
     "electron": "^10.1.1",
