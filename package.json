@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Muhammad Ardie",
@@ -11,6 +11,10 @@
   },
   "build": {
     "appId": "com.github.muhammadardie.electronupdaterexample",
+    "artifactName": "${productName}-setup-${version}.${ext}",
+    "directories": {
+      "output": "build"
+    },
     "publish": [
       {
         "provider": "github",
