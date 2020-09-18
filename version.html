@@ -26,18 +26,20 @@
 <script>
 // Display the current version
 let version = window.location.hash.substring(1);
+let container = document.getElementById('messages');
+
 document.getElementById('version').innerText = version;
 document.getElementById("btn-update").onclick = updateIoc;
 // Listen for messages
 const {ipcRenderer} = require('electron');
-ipcRenderer.on('message', function(event, text) {
-  var container = document.getElementById('messages');
+ipcRenderer.on('message', function(event, text) {  
   var message = document.createElement('div');
   message.innerHTML = text;
   container.appendChild(message);
 })
 
 function updateIoc() {
+	container.html = ''
 	ipcRenderer.send("update-ioc")
 }
 
