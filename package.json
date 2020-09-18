@@ -12,9 +12,6 @@
   "build": {
     "appId": "com.github.muhammadardie.electronupdaterexample",
     "artifactName": "${productName}-setup-${version}.${ext}",
-    "directories": {
-      "output": "build"
-    },
     "publish": [
       {
         "provider": "github",
