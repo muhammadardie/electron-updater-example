@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Muhammad Ardie",
@@ -11,11 +11,13 @@
   },
   "build": {
     "appId": "com.github.muhammadardie.electronupdaterexample",
-    "publish": [{
-         "provider": "github",
-         "owner": "muhammadardie",
-         "repo": "electron-updater-example"
-     }],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "muhammadardie",
+        "repo": "electron-updater-example"
+      }
+    ],
     "win": {
       "target": "nsis"
     }
@@ -26,6 +28,7 @@
   },
   "dependencies": {
     "electron-log": "^4.2.4",
-    "electron-updater": "^4.3.4"
+    "electron-updater": "^4.3.4",
+    "update-electron-app": "^1.5.0"
   }
 }
