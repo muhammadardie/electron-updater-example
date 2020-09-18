@@ -7,7 +7,7 @@
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -19,14 +19,15 @@
 </head>
 <body>
 	<p>Electron Auto Update Example</p>
-	<button class="button">Button</button>
-  Current version: <span id="version">vX.Y.Z</span>
-  <div id="messages"></div>
+	<button class="button" id="btn-update">Check Update</button>
+	<br />
+	Current version: <span id="version">vX.Y.Z</span>
+	<div id="messages"></div>
 <script>
 // Display the current version
 let version = window.location.hash.substring(1);
 document.getElementById('version').innerText = version;
-
+document.getElementById("btn-update").onclick = updateIoc;
 // Listen for messages
 const {ipcRenderer} = require('electron');
 ipcRenderer.on('message', function(event, text) {
@@ -35,6 +36,11 @@ ipcRenderer.on('message', function(event, text) {
   message.innerHTML = text;
   container.appendChild(message);
 })
+
+function updateIoc() {
+	ipcRenderer.send("update-ioc")
+}
+
 </script>
 </body>
 </html>
